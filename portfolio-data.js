@@ -85,8 +85,7 @@ const PROJECTS = [
     date: "",
     objective: "",
 
-    description: "A self-initiated video editing project created to showcase my editing skills. I worked with raw footage and shaped it into a polished 31-second 16:9 video using clean cuts, pacing, transitions, music, and visual enhancements. The final edit is designed to demonstrate professional storytelling and engaging short-form editing.
-",
+    description: "A self-initiated video editing project created to showcase my editing skills.",
     approach: "I focused on clean pacing and precise cuts to keep the 31-second edit engaging from start to finish. I used smooth, purposeful transitions where needed, balanced the audio with music and sound effects, and refined the timing of each shot to create a cohesive flow. The raw footage was shaped into a polished 16:9 showcase piece with a professional visual and audio finish.
 ",
 
