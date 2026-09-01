@@ -88,11 +88,11 @@ const PROJECTS = [
     description: "Add your project description here. Explain the goal of the edit, the raw footage you were given, and the outcome you delivered.",
     approach: "Describe your editing approach here — pacing decisions, transitions, sound design choices, and how you shaped the raw footage into a finished piece.",
 
-    thumbnail: "",                       // e.g. "assets/images/project-01.jpg"
+    thumbnail: "project-01.jpg",                       // e.g. "assets/images/project-01.jpg"
 
-    videoType: "",                       // "mp4" | "youtube" | "vimeo" | ""
-    videoUrl: "",
-    orientation: "vertical"              // "vertical" (9:16) or "horizontal" (16:9)
+    videoType: "youtube",                       // "mp4" | "youtube" | "vimeo" | ""
+    videoUrl: "https://youtu.be/LIgrSS12SbE",
+    orientation: "horizontal"              // "vertical" (9:16) or "horizontal" (16:9)
   },
   {
     id: "02",
