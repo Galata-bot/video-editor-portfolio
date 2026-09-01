@@ -73,10 +73,10 @@ const CATEGORIES = [
 const PROJECTS = [
   {
     id: "01",
-    title: "Project Title",
-    category: "Short-Form",              // see CATEGORIES above — or use "Other"
+    title: "Self promotion",
+    category: "16:9",              // see CATEGORIES above — or use "Other"
     duration: "00:31",                   // shown as meta text (running time)
-    platform: "TikTok, Instagram Reels",
+    platform: "TikTok, Instagram Reels, Youtube",
     services: "Editing, pacing, captions, sound design",
     featured: true,                      // true shows a "Featured" flag on the grid
 
@@ -85,8 +85,10 @@ const PROJECTS = [
     date: "",
     objective: "",
 
-    description: "Add your project description here. Explain the goal of the edit, the raw footage you were given, and the outcome you delivered.",
-    approach: "Describe your editing approach here — pacing decisions, transitions, sound design choices, and how you shaped the raw footage into a finished piece.",
+    description: "A self-initiated video editing project created to showcase my editing skills. I worked with raw footage and shaped it into a polished 31-second 16:9 video using clean cuts, pacing, transitions, music, and visual enhancements. The final edit is designed to demonstrate professional storytelling and engaging short-form editing.
+",
+    approach: "I focused on clean pacing and precise cuts to keep the 31-second edit engaging from start to finish. I used smooth, purposeful transitions where needed, balanced the audio with music and sound effects, and refined the timing of each shot to create a cohesive flow. The raw footage was shaped into a polished 16:9 showcase piece with a professional visual and audio finish.
+",
 
     thumbnail: "project-01.jpg",                       // e.g. "assets/images/project-01.jpg"
 
