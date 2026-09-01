@@ -88,7 +88,7 @@ const PROJECTS = [
     description: "A self-initiated video editing project created to showcase my editing skills.",
     approach: "I focused on clean pacing and precise cuts to keep the 31-second edit engaging from start to finish. I used smooth, purposeful transitions where needed, balanced the audio with music and sound effects, and refined the timing of each shot to create a cohesive flow. The raw footage was shaped into a polished 16:9 showcase piece with a professional visual and audio finish.",
 
-    thumbnail: "assets/images/project-01.jpg",                       // e.g. "assets/images/project-01.jpg"
+    thumbnail: "assets/images/project-01.png",                       // e.g. "assets/images/project-01.jpg"
 
     videoType: "youtube",                       // "mp4" | "youtube" | "vimeo" | ""
     videoUrl: "https://youtu.be/LIgrSS12SbE",
