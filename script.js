@@ -257,7 +257,51 @@
 
   renderFilterTabs();
   renderGrid();
+  /* ---------------------------------------------------------------------
+     HERO REEL CLUSTER
+     Pulls up to 3 projects — featured ones first — and links each frame
+     straight to that project's detail page. Set "featured": true on
+     projects in portfolio-data.js to control which ones show up here.
+     --------------------------------------------------------------------- */
+  function renderHeroReel(){
+    var heroReel = document.getElementById("heroReel");
+    if(!heroReel) return;
 
+    var featured = PROJECTS_LIST.filter(function(p){ return p.featured; });
+    var rest = PROJECTS_LIST.filter(function(p){ return !p.featured; });
+    var picks = featured.concat(rest).slice(0, 3);
+
+    heroReel.innerHTML = "";
+    picks.forEach(function(p, i){
+      var a = document.createElement("a");
+      a.className = "reel-frame" + (i === 1 ? " big" : "");
+      a.href = "#/work/" + encodeURIComponent(p.id);
+      a.setAttribute("aria-label", "View project: " + (p.title || "Untitled project"));
+
+      if(p.thumbnail){
+        var img = document.createElement("img");
+        img.src = p.thumbnail;
+        img.loading = "lazy";
+        img.alt = "";
+        a.appendChild(img);
+      }
+
+      var play = document.createElement("div");
+      play.className = "play";
+      play.innerHTML = '<svg viewBox="0 0 24 24" class="icon-play" aria-hidden="true"><path d="M9 7l8 5-8 5z"/></svg>';
+      a.appendChild(play);
+
+      if(p.duration){
+        var tag = document.createElement("div");
+        tag.className = "tag";
+        tag.textContent = p.duration;
+        a.appendChild(tag);
+      }
+
+      heroReel.appendChild(a);
+    });
+  }
+  renderHeroReel();
   /* ---------------------------------------------------------------------
      PROJECT DETAIL VIEW + HASH ROUTING
      --------------------------------------------------------------------- */
