@@ -263,42 +263,73 @@
      straight to that project's detail page. Set "featured": true on
      projects in portfolio-data.js to control which ones show up here.
      --------------------------------------------------------------------- */
+   /* ---------------------------------------------------------------------
+     HERO AD REEL
+     Reads from the ADS array in ads-data.js — completely separate from
+     your portfolio projects. Each clip autoplays muted and loops; the
+     frames are decorative and not clickable. Respects
+     prefers-reduced-motion by showing a static poster instead of
+     autoplaying for visitors who've asked for reduced motion.
+     --------------------------------------------------------------------- */
+  function buildAdFrame(ad, isBig){
+    var wrap = document.createElement("div");
+    wrap.className = "reel-frame" + (isBig ? " big" : "");
+    wrap.setAttribute("role", "img");
+    wrap.setAttribute("aria-label", (ad && ad.label) || "Advertisement preview");
+
+    var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var hasVideo = ad && ad.videoType && ad.videoUrl;
+
+    if(!hasVideo || reduceMotion){
+      if(ad && ad.poster){
+        var img = document.createElement("img");
+        img.src = ad.poster;
+        img.alt = "";
+        wrap.appendChild(img);
+      }
+      return wrap;
+    }
+
+    if(ad.videoType === "mp4"){
+      var video = document.createElement("video");
+      video.src = ad.videoUrl;
+      video.autoplay = true;
+      video.muted = true;
+      video.loop = true;
+      video.playsInline = true;
+      video.setAttribute("muted", "");
+      if(ad.poster) video.poster = ad.poster;
+      video.className = "reel-video";
+      wrap.appendChild(video);
+    } else {
+      var id = extractVideoId(ad.videoType, ad.videoUrl);
+      var src = "";
+      if(ad.videoType === "youtube"){
+        src = "https://www.youtube-nocookie.com/embed/" + encodeURIComponent(id) +
+          "?autoplay=1&mute=1&loop=1&playlist=" + encodeURIComponent(id) +
+          "&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1";
+      } else if(ad.videoType === "vimeo"){
+        src = "https://player.vimeo.com/video/" + encodeURIComponent(id) +
+          "?autoplay=1&muted=1&loop=1&background=1";
+      }
+      var iframe = document.createElement("iframe");
+      iframe.src = src;
+      iframe.className = "reel-video";
+      iframe.title = (ad && ad.label) || "Advertisement preview";
+      iframe.setAttribute("allow", "autoplay; fullscreen");
+      iframe.setAttribute("tabindex", "-1");
+      wrap.appendChild(iframe);
+    }
+    return wrap;
+  }
+
   function renderHeroReel(){
     var heroReel = document.getElementById("heroReel");
     if(!heroReel) return;
-
-    var featured = PROJECTS_LIST.filter(function(p){ return p.featured; });
-    var rest = PROJECTS_LIST.filter(function(p){ return !p.featured; });
-    var picks = featured.concat(rest).slice(0, 3);
-
+    var list = (typeof ADS !== "undefined" ? ADS : []).slice(0, 3);
     heroReel.innerHTML = "";
-    picks.forEach(function(p, i){
-      var a = document.createElement("a");
-      a.className = "reel-frame" + (i === 1 ? " big" : "");
-      a.href = "#/work/" + encodeURIComponent(p.id);
-      a.setAttribute("aria-label", "View project: " + (p.title || "Untitled project"));
-
-      if(p.thumbnail){
-        var img = document.createElement("img");
-        img.src = p.thumbnail;
-        img.loading = "lazy";
-        img.alt = "";
-        a.appendChild(img);
-      }
-
-      var play = document.createElement("div");
-      play.className = "play";
-      play.innerHTML = '<svg viewBox="0 0 24 24" class="icon-play" aria-hidden="true"><path d="M9 7l8 5-8 5z"/></svg>';
-      a.appendChild(play);
-
-      if(p.duration){
-        var tag = document.createElement("div");
-        tag.className = "tag";
-        tag.textContent = p.duration;
-        a.appendChild(tag);
-      }
-
-      heroReel.appendChild(a);
+    list.forEach(function(ad, i){
+      heroReel.appendChild(buildAdFrame(ad, i === 1));
     });
   }
   renderHeroReel();
