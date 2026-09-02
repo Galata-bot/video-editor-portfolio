@@ -127,26 +127,26 @@ header.site-nav.scrolled{
 /* =============================================================================
    HERO
    ============================================================================= */
-.hero{ padding-top: clamp(140px, 20vw, 190px); padding-bottom: clamp(60px,8vw,100px); position:relative; }
-.hero-grid{ display:grid; grid-template-columns: 1.1fr .9fr; gap: 56px; align-items:end; }
-.hero h1{ font-size: clamp(44px, 6.6vw, 92px); line-height: 0.98; }
-.hero-sub{ margin-top: 26px; color: var(--text-muted); font-size: clamp(16px,1.6vw,19px); max-width: 46ch; }
-.hero-ctas{ display:flex; gap:14px; margin-top: 38px; flex-wrap:wrap; }
-
-.reel-cluster{ display:flex; align-items:flex-end; justify-content:flex-end; gap: 14px; }
 .reel-frame{
-  aspect-ratio: 9/16; width: 108px; background: var(--surface); border: 1px solid var(--border);
+  display:block; aspect-ratio: 9/16; width: 108px; background: var(--surface); border: 1px solid var(--border);
   border-radius: var(--radius-md); position:relative; overflow:hidden; flex-shrink:0;
+  transition: border-color var(--dur) var(--ease);
 }
+a.reel-frame:hover{ border-color: var(--accent); }
 .reel-frame.big{ width: 168px; }
 .reel-frame:nth-child(1){ transform: rotate(-4deg) translateY(10px); }
 .reel-frame:nth-child(3){ transform: rotate(4deg) translateY(10px); }
+.reel-frame img{
+  position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
+}
 .reel-frame .play{
   position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
 }
 .reel-frame .play svg{ width:22px; height:22px; opacity:.55; }
+.reel-frame.big .play svg{ width:30px; height:30px; }
 .reel-frame .tag{
   position:absolute; left:8px; bottom:8px; font-family: var(--font-mono); font-size: 9.5px; color: var(--text-faint);
+  background: rgba(14,14,16,.55); padding: 1px 5px; border-radius: 2px;
 }
 
 /* =============================================================================
