@@ -1,3 +1,5 @@
+
+Style · CSS
 /* =============================================================================
    DESIGN TOKENS
    ============================================================================= */
@@ -12,11 +14,11 @@
   --accent: #C7A25E;
   --accent-soft: rgba(199,162,94,.13);
   --accent-text: #17140D;
-
+ 
   --font-display: 'Space Grotesk', 'Helvetica Neue', Arial, sans-serif;
   --font-body: 'Inter', 'Helvetica Neue', Arial, sans-serif;
   --font-mono: 'JetBrains Mono', ui-monospace, Menlo, monospace;
-
+ 
   --maxw: 1240px;
   --gutter: clamp(20px, 5vw, 64px);
   --radius-sm: 2px;
@@ -24,7 +26,7 @@
   --dur: 220ms;
   --ease: cubic-bezier(.4,0,.2,1);
 }
-
+ 
 *{ box-sizing: border-box; }
 html{ scroll-behavior: smooth; }
 @media (prefers-reduced-motion: reduce){
@@ -46,35 +48,35 @@ a{ color: inherit; text-decoration: none; }
 button{ font-family: inherit; cursor: pointer; }
 ul{ margin:0; padding:0; list-style:none; }
 h1,h2,h3,h4,p{ margin:0; }
-
+ 
 .wrap{ max-width: var(--maxw); margin: 0 auto; padding-left: var(--gutter); padding-right: var(--gutter); }
-
+ 
 :focus-visible{ outline: 2px solid var(--accent); outline-offset: 3px; }
-
+ 
 .skip-link{
   position:absolute; left:16px; top:-60px; background:var(--accent); color:var(--accent-text);
   padding:10px 16px; font-weight:600; border-radius: var(--radius-sm); z-index: 999; transition: top var(--dur) var(--ease);
 }
 .skip-link:focus{ top:16px; }
-
+ 
 .visually-hidden{
   position:absolute !important; width:1px; height:1px; padding:0; margin:-1px;
   overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0;
 }
-
+ 
 h1,h2,h3{ font-family: var(--font-display); font-weight: 600; letter-spacing: -0.01em; }
-
+ 
 .eyebrow{
   font-family: var(--font-mono); font-size: 12.5px; color: var(--text-faint);
   display:flex; align-items:center; gap:10px;
 }
 .eyebrow .rule{ width:28px; height:1px; background: var(--text-faint); display:inline-block; }
-
+ 
 .section{ padding: clamp(72px, 10vw, 140px) 0; }
 .section-head{ max-width: 640px; margin-bottom: clamp(36px, 5vw, 64px); }
 .section-head h2{ font-size: clamp(28px, 3.4vw, 42px); line-height:1.15; margin-top:14px; }
 .section-head p{ color: var(--text-muted); margin-top: 16px; font-size: 17px; max-width: 52ch; }
-
+ 
 .btn{
   display:inline-flex; align-items:center; justify-content:center; gap:10px;
   padding: 14px 26px; font-size: 14.5px; font-weight: 600; border-radius: var(--radius-md);
@@ -88,7 +90,7 @@ h1,h2,h3{ font-family: var(--font-display); font-weight: 600; letter-spacing: -0
 .btn-ghost:hover{ border-color: var(--accent); color: var(--accent); }
 .btn-ghost.is-active{ border-color: var(--accent); color: var(--accent); background: var(--accent-soft); }
 .btn-sm{ padding: 10px 18px; font-size: 13px; }
-
+ 
 /* =============================================================================
    NAV
    ============================================================================= */
@@ -114,7 +116,7 @@ header.site-nav.scrolled{
 .hamburger span:nth-child(2){ top:19px; }
 .hamburger[aria-expanded="true"] span:nth-child(1){ transform: translateY(4px) rotate(45deg); }
 .hamburger[aria-expanded="true"] span:nth-child(2){ transform: translateY(-4px) rotate(-45deg); }
-
+ 
 .mobile-panel{
   position: fixed; inset: 76px 0 0 0; background: var(--bg); z-index: 480;
   display:flex; flex-direction:column; justify-content:space-between; padding: 32px var(--gutter) 40px;
@@ -123,7 +125,7 @@ header.site-nav.scrolled{
 .mobile-panel.open{ opacity:1; transform:none; pointer-events:auto; }
 .mobile-panel .nav-links{ flex-direction:column; align-items:flex-start; gap: 22px; }
 .mobile-panel .nav-links a{ font-size: 26px; color: var(--text); font-family: var(--font-display); }
-
+ 
 /* =============================================================================
    HERO
    ============================================================================= */
@@ -132,9 +134,9 @@ header.site-nav.scrolled{
 .hero h1{ font-size: clamp(44px, 6.6vw, 92px); line-height: 0.98; }
 .hero-sub{ margin-top: 26px; color: var(--text-muted); font-size: clamp(16px,1.6vw,19px); max-width: 46ch; }
 .hero-ctas{ display:flex; gap:14px; margin-top: 38px; flex-wrap:wrap; }
-
+ 
 .reel-cluster{ display:flex; align-items:flex-end; justify-content:flex-end; gap: 14px; }
-
+ 
 .reel-frame{
   display:block; aspect-ratio: 9/16; width: 108px; background: var(--surface); border: 1px solid var(--border);
   border-radius: var(--radius-md); position:relative; overflow:hidden; flex-shrink:0;
@@ -159,7 +161,7 @@ a.reel-frame:hover{ border-color: var(--accent); }
 .reel-video{
   position:absolute; inset:0; width:100%; height:100%; object-fit:cover; border:0; pointer-events:none;
 }
-
+ 
 /* =============================================================================
    FILTER TABS
    ============================================================================= */
@@ -173,7 +175,7 @@ a.reel-frame:hover{ border-color: var(--accent); }
 }
 .filter-tab:hover{ color: var(--text); border-color: var(--text-faint); }
 .filter-tab[aria-pressed="true"]{ color: var(--accent-text); background: var(--accent); border-color: var(--accent); }
-
+ 
 /* =============================================================================
    WORK GRID
    ============================================================================= */
@@ -187,6 +189,7 @@ a.reel-frame:hover{ border-color: var(--accent); }
   position:relative; overflow:hidden; transition: border-color var(--dur) var(--ease);
   display:flex; align-items:center; justify-content:center;
 }
+.work-card .frame.frame--horizontal{ aspect-ratio: 16/9; }
 .work-card .frame img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
 .work-card:hover .frame{ border-color: var(--accent); }
 .work-card .frame .title-mark{
@@ -212,7 +215,7 @@ a.reel-frame:hover{ border-color: var(--accent); }
 }
 .work-more{ margin-top: 48px; display:flex; justify-content:center; }
 .work-empty{ color: var(--text-faint); font-family: var(--font-mono); font-size: 13.5px; padding: 40px 0; grid-column: 1/-1; text-align:center; }
-
+ 
 /* =============================================================================
    SERVICES
    ============================================================================= */
@@ -224,7 +227,7 @@ a.reel-frame:hover{ border-color: var(--accent); }
 .service-row .num{ font-family: var(--font-mono); color: var(--accent); font-size: 14px; }
 .service-row h3{ font-size: 19px; font-weight:600; }
 .service-row p{ color: var(--text-muted); font-size: 15px; max-width: 46ch; }
-
+ 
 /* =============================================================================
    ABOUT
    ============================================================================= */
@@ -242,7 +245,7 @@ a.reel-frame:hover{ border-color: var(--accent); }
 .about-facts .k{ font-family: var(--font-mono); font-size: 11.5px; color: var(--text-faint); }
 .about-facts .v{ margin-top:6px; font-size: 14.5px; }
 .about-body .btn{ margin-top: 30px; }
-
+ 
 /* =============================================================================
    WHY
    ============================================================================= */
@@ -250,7 +253,7 @@ a.reel-frame:hover{ border-color: var(--accent); }
 .why-card{ background: var(--bg); padding: 34px 26px; }
 .why-card h3{ font-size: 17px; font-weight:600; }
 .why-card p{ margin-top:10px; color: var(--text-muted); font-size: 14.5px; }
-
+ 
 /* =============================================================================
    MEDIA EMBED (reusable video component — showreel + project detail)
    ============================================================================= */
@@ -260,7 +263,7 @@ a.reel-frame:hover{ border-color: var(--accent); }
 }
 .media-embed--horizontal{ aspect-ratio: 16/9; }
 .media-embed--vertical{ aspect-ratio: 9/16; max-width: 420px; }
-
+ 
 .media-poster{
   position:absolute; inset:0; width:100%; height:100%; background:none; border:none; padding:0;
   display:flex; align-items:center; justify-content:center; color:inherit;
@@ -276,20 +279,20 @@ a.reel-frame:hover{ border-color: var(--accent); }
 }
 .media-poster:hover .media-play{ transform: scale(1.06); background: rgba(14,14,16,.9); }
 .media-play svg{ width:24px; height:24px; }
-
+ 
 .media-static{
   position:absolute; inset:0; width:100%; height:100%; display:flex; align-items:center; justify-content:center;
 }
 .media-static img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
 .media-static .media-poster-fallback{ position:relative; }
-
+ 
 .media-video, .media-iframe{
   position:absolute; inset:0; width:100%; height:100%; border:0; background:#000;
 }
-
+ 
 .showreel-wrap{ margin: 0 auto; }
 .showreel-wrap.media-embed--horizontal{ max-width:100%; }
-
+ 
 /* =============================================================================
    CONTACT
    ============================================================================= */
@@ -308,7 +311,7 @@ a.reel-frame:hover{ border-color: var(--accent); }
 .form-status.is-visible{ display:block; }
 .form-status.is-success{ background: var(--accent-soft); color: var(--accent); border:1px solid var(--accent); }
 .form-status.is-error{ background: rgba(199,94,94,.13); color:#e08a8a; border:1px solid #6b3a3a; }
-
+ 
 .direct-contact{ display:flex; flex-direction:column; gap:10px; }
 .direct-contact a{
   display:flex; align-items:center; justify-content:space-between; padding: 16px 18px;
@@ -316,7 +319,7 @@ a.reel-frame:hover{ border-color: var(--accent); }
 }
 .direct-contact a:hover{ border-color: var(--accent); background: var(--accent-soft); }
 .direct-contact .empty-note{ color:var(--text-faint); font-size:13.5px; }
-
+ 
 /* =============================================================================
    FOOTER
    ============================================================================= */
@@ -326,7 +329,7 @@ footer{ border-top: 1px solid var(--border); padding: 48px 0; }
 .footer-links a{ font-size:13.5px; color: var(--text-muted); }
 .footer-links a:hover{ color: var(--text); }
 .footer-copy{ font-size:12.5px; color: var(--text-faint); margin-top: 26px; }
-
+ 
 /* =============================================================================
    PROJECT DETAIL
    ============================================================================= */
@@ -342,7 +345,7 @@ footer{ border-top: 1px solid var(--border); padding: 48px 0; }
 .detail-body h3{ font-size:13px; font-family: var(--font-mono); color: var(--accent); text-transform: none; }
 .detail-body p{ margin-top:12px; color: var(--text-muted); font-size:15.5px; }
 .detail-body .detail-field--empty{ display:none; }
-
+ 
 .detail-nav{
   margin-top: 56px; padding-top: 32px; border-top:1px solid var(--border);
   display:flex; align-items:center; justify-content:space-between; gap: 20px; flex-wrap:wrap;
@@ -353,19 +356,19 @@ footer{ border-top: 1px solid var(--border); padding: 48px 0; }
 .detail-nav-link .k{ font-family: var(--font-mono); font-size:11.5px; color: var(--text-faint); }
 .detail-nav-link:hover{ color: var(--accent); }
 .detail-nav-link.detail-nav-next{ text-align:right; align-items:flex-end; margin-left:auto; }
-
+ 
 .detail-cta{ margin-top: 72px; padding-top: 56px; border-top:1px solid var(--border); text-align:center; }
 .detail-cta h2{ font-size: clamp(26px,3.4vw,38px); }
 .detail-cta .btn{ margin-top: 24px; }
-
+ 
 /* =============================================================================
    REVEAL / MISC
    ============================================================================= */
 .reveal{ opacity:0; transform: translateY(14px); transition: opacity 560ms var(--ease), transform 560ms var(--ease); }
 .reveal.in{ opacity:1; transform:none; }
-
+ 
 .icon-play{ fill:none; stroke: var(--accent); stroke-width:1.4; }
-
+ 
 /* =============================================================================
    RESPONSIVE
    ============================================================================= */
@@ -374,7 +377,9 @@ footer{ border-top: 1px solid var(--border); padding: 48px 0; }
   .nav-cta .btn-ghost{ display:none; }
   .hamburger{ display:block; }
   .hero-grid{ grid-template-columns: 1fr; }
-  .reel-cluster{ justify-content:flex-start; margin-top: 40px; }
+  .reel-cluster{ justify-content:flex-start; margin-top: 40px; gap: 10px; }
+  .reel-frame{ width: 88px; }
+  .reel-frame.big{ width: 136px; }
   .work-grid{ grid-template-columns: repeat(2, 1fr); }
   .service-row{ grid-template-columns: 40px 1fr; }
   .service-row p{ grid-column: 2 / 3; }
@@ -391,6 +396,10 @@ footer{ border-top: 1px solid var(--border); padding: 48px 0; }
   .nav-inner{ height:64px; }
   .mobile-panel{ inset: 64px 0 0 0; }
   .media-embed--vertical{ max-width: 260px; }
+  .reel-cluster{ gap: 8px; }
+  .reel-frame{ width: 72px; }
+  .reel-frame.big{ width: 112px; }
   .detail-nav{ flex-direction:column; align-items:flex-start; }
   .detail-nav-link.detail-nav-next{ text-align:left; align-items:flex-start; margin-left:0; }
 }
+ 
