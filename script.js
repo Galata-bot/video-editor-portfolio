@@ -1,3 +1,5 @@
+
+Script · JS
 /* =============================================================================
    SCRIPT.JS — Vanilla JS only. No frameworks, no build step.
    Reads the SITE_CONFIG, PROJECTS, and CATEGORIES globals defined in
@@ -5,7 +7,7 @@
    ============================================================================= */
 (function(){
   "use strict";
-
+ 
   // config.js and portfolio-data.js declare SITE_CONFIG, PROJECTS, and
   // CATEGORIES with `const` at the top level of their own <script> tags.
   // Top-level `const`/`let` create global bindings but not `window`
@@ -18,7 +20,7 @@
   var CONFIG = SITE_CONFIG;
   var PROJECTS_LIST = PROJECTS;
   var CATEGORIES_LIST = CATEGORIES;
-
+ 
   /* ---------------------------------------------------------------------
      Small helpers
      --------------------------------------------------------------------- */
@@ -27,7 +29,7 @@
       return { "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;", "'":"&#39;" }[c];
     });
   }
-
+ 
   function extractVideoId(type, url){
     if(!url) return "";
     if(!/^https?:\/\//i.test(url)) return url.trim(); // already looks like a bare ID
@@ -46,7 +48,7 @@
     }catch(e){ /* fall through */ }
     return url.trim();
   }
-
+ 
   /* ---------------------------------------------------------------------
      REUSABLE VIDEO COMPONENT
      Builds a lazy-loading media embed: shows a poster/thumbnail with a
@@ -57,12 +59,12 @@
     options = options || {};
     var orientation = project.orientation === "horizontal" ? "horizontal" : "vertical";
     var extraClass = options.extraClass ? " " + options.extraClass : "";
-
+ 
     var wrap = document.createElement("div");
     wrap.className = "media-embed media-embed--" + orientation + extraClass;
-
+ 
     var hasVideo = !!(project.videoType && project.videoUrl);
-
+ 
     if(!hasVideo){
       wrap.classList.add("media-embed--static");
       var staticInner = document.createElement("div");
@@ -82,12 +84,12 @@
       wrap.appendChild(staticInner);
       return wrap;
     }
-
+ 
     var posterBtn = document.createElement("button");
     posterBtn.type = "button";
     posterBtn.className = "media-poster";
     posterBtn.setAttribute("aria-label", "Play video: " + (project.title || "project"));
-
+ 
     if(project.thumbnail){
       var pimg = document.createElement("img");
       pimg.src = project.thumbnail;
@@ -100,22 +102,22 @@
       pfallback.textContent = project.title || "Play video";
       posterBtn.appendChild(pfallback);
     }
-
+ 
     var playDot = document.createElement("span");
     playDot.className = "media-play";
     playDot.innerHTML = '<svg viewBox="0 0 24 24" class="icon-play" aria-hidden="true"><path d="M9 7l8 5-8 5z"/></svg>';
     posterBtn.appendChild(playDot);
-
+ 
     posterBtn.addEventListener("click", function(){ loadRealMedia(wrap, project); });
     wrap.appendChild(posterBtn);
     return wrap;
   }
-
+ 
   function loadRealMedia(wrap, project){
     wrap.innerHTML = "";
     wrap.classList.add("media-embed--active");
     var el;
-
+ 
     if(project.videoType === "mp4"){
       el = document.createElement("video");
       el.src = project.videoUrl;
@@ -141,11 +143,11 @@
       el.loading = "lazy";
       el.setAttribute("referrerpolicy", "strict-origin-when-cross-origin");
     }
-
+ 
     wrap.appendChild(el);
     if(typeof el.focus === "function") el.focus();
   }
-
+ 
   /* ---------------------------------------------------------------------
      PORTFOLIO GRID + FILTERING
      --------------------------------------------------------------------- */
@@ -155,14 +157,14 @@
   var PAGE_SIZE = 6;
   var visibleCount = PAGE_SIZE;
   var activeFilter = "all";
-
+ 
   function projectsForFilter(key){
     if(key === "all") return PROJECTS_LIST;
     var cat = CATEGORIES_LIST.find(function(c){ return c.key === key; });
     if(!cat || !cat.match) return PROJECTS_LIST;
     return PROJECTS_LIST.filter(function(p){ return p.category === cat.match; });
   }
-
+ 
   function renderFilterTabs(){
     if(!filterTabsEl) return;
     filterTabsEl.innerHTML = "";
@@ -182,12 +184,12 @@
       filterTabsEl.appendChild(btn);
     });
   }
-
+ 
   function renderGrid(){
     if(!grid) return;
     grid.innerHTML = "";
     var filtered = projectsForFilter(activeFilter);
-
+ 
     if(!filtered.length){
       var empty = document.createElement("div");
       empty.className = "work-empty";
@@ -196,23 +198,23 @@
       if(loadMoreBtn) loadMoreBtn.style.display = "none";
       return;
     }
-
+ 
     filtered.slice(0, visibleCount).forEach(function(p){
       var card = document.createElement("a");
       card.href = "#/work/" + encodeURIComponent(p.id);
       card.className = "work-card reveal in";
       card.dataset.id = p.id;
-
+ 
       var frame = document.createElement("div");
-      frame.className = "frame";
-
+      frame.className = "frame" + (p.orientation === "horizontal" ? " frame--horizontal" : "");
+ 
       if(p.featured){
         var flag = document.createElement("div");
         flag.className = "featured-flag";
         flag.textContent = "Featured";
         frame.appendChild(flag);
       }
-
+ 
       if(p.thumbnail){
         var img = document.createElement("img");
         img.src = p.thumbnail;
@@ -225,28 +227,28 @@
         titleMark.textContent = p.title || "Untitled project";
         frame.appendChild(titleMark);
       }
-
+ 
       var playDot = document.createElement("div");
       playDot.className = "play-dot";
       playDot.innerHTML = '<span><svg viewBox="0 0 24 24" class="icon-play" aria-hidden="true"><path d="M9 7l8 5-8 5z"/></svg></span>';
       frame.appendChild(playDot);
-
+ 
       var meta = document.createElement("div");
       meta.className = "work-meta";
       meta.innerHTML =
         "<h3>" + escapeHtml(p.title || "Untitled project") + "</h3>" +
         '<div class="meta-line"><span>' + escapeHtml(p.duration || "") + "</span><span>&middot;</span><span>" + escapeHtml(p.category || "") + "</span></div>";
-
+ 
       card.appendChild(frame);
       card.appendChild(meta);
       grid.appendChild(card);
     });
-
+ 
     if(loadMoreBtn){
       loadMoreBtn.style.display = visibleCount >= filtered.length ? "none" : "inline-flex";
     }
   }
-
+ 
   if(loadMoreBtn){
     loadMoreBtn.addEventListener("click", function(e){
       e.preventDefault();
@@ -254,7 +256,7 @@
       renderGrid();
     });
   }
-
+ 
   renderFilterTabs();
   renderGrid();
   /* ---------------------------------------------------------------------
@@ -276,10 +278,10 @@
     wrap.className = "reel-frame" + (isBig ? " big" : "");
     wrap.setAttribute("role", "img");
     wrap.setAttribute("aria-label", (ad && ad.label) || "Advertisement preview");
-
+ 
     var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     var hasVideo = ad && ad.videoType && ad.videoUrl;
-
+ 
     if(!hasVideo || reduceMotion){
       if(ad && ad.poster){
         var img = document.createElement("img");
@@ -289,7 +291,7 @@
       }
       return wrap;
     }
-
+ 
     if(ad.videoType === "mp4"){
       var video = document.createElement("video");
       video.src = ad.videoUrl;
@@ -322,7 +324,7 @@
     }
     return wrap;
   }
-
+ 
   function renderHeroReel(){
     var heroReel = document.getElementById("heroReel");
     if(!heroReel) return;
@@ -339,10 +341,10 @@
   var homeView = document.getElementById("home-view");
   var detailView = document.getElementById("project-view");
   var detailVideoWrap = document.getElementById("detailVideoWrap");
-
+ 
   function findProject(id){ return PROJECTS_LIST.find(function(p){ return p.id === id; }); }
   function findIndex(id){ return PROJECTS_LIST.findIndex(function(p){ return p.id === id; }); }
-
+ 
   function setField(id, value, wrapperSelector){
     var el = document.getElementById(id);
     if(!el) return;
@@ -352,42 +354,42 @@
       if(wrapper) wrapper.classList.toggle("detail-field--empty", !value);
     }
   }
-
+ 
   function openProject(id){
     var p = findProject(id);
     if(!p){
       closeProject();
       return;
     }
-
+ 
     document.getElementById("detailCategory").innerHTML = '<span class="rule"></span>' + escapeHtml(p.category || "");
     document.getElementById("detailTitle").textContent = p.title || "Untitled project";
-
+ 
     var metaBits = [];
     if(p.duration) metaBits.push("<span>" + escapeHtml(p.duration) + "</span>");
     if(p.platform) metaBits.push("<span>" + escapeHtml(p.platform) + "</span>");
     if(p.client) metaBits.push("<span>" + escapeHtml(p.client) + "</span>");
     if(p.date) metaBits.push("<span>" + escapeHtml(p.date) + "</span>");
     document.getElementById("detailMeta").innerHTML = metaBits.join("");
-
+ 
     setField("detailDescription", p.description, ".detail-field");
     setField("detailApproach", p.approach, ".detail-field");
     setField("detailPlatform", p.platform, ".detail-field");
     setField("detailServices", p.services, ".detail-field");
     setField("detailObjective", p.objective, ".detail-field");
-
+ 
     if(detailVideoWrap){
       detailVideoWrap.innerHTML = "";
       detailVideoWrap.appendChild(buildMediaEmbed(p, {}));
     }
-
+ 
     // Prev / next navigation, based on full project order
     var idx = findIndex(id);
     var prev = idx > 0 ? PROJECTS_LIST[idx - 1] : null;
     var next = idx >= 0 && idx < PROJECTS_LIST.length - 1 ? PROJECTS_LIST[idx + 1] : null;
     var prevLink = document.getElementById("detailPrev");
     var nextLink = document.getElementById("detailNext");
-
+ 
     if(prev){
       prevLink.href = "#/work/" + encodeURIComponent(prev.id);
       prevLink.querySelector(".t").textContent = prev.title || "Untitled project";
@@ -402,19 +404,19 @@
     } else {
       nextLink.style.visibility = "hidden";
     }
-
+ 
     homeView.style.display = "none";
     detailView.classList.add("open");
     document.title = (p.title ? p.title + " — " : "") + CONFIG.name;
     window.scrollTo(0, 0);
   }
-
+ 
   function closeProject(){
     homeView.style.display = "";
     detailView.classList.remove("open");
     document.title = CONFIG.name + (CONFIG.title ? " — " + CONFIG.title : "");
   }
-
+ 
   function routeFromHash(){
     var match = location.hash.match(/^#\/work\/(.+)$/);
     if(match){ openProject(decodeURIComponent(match[1])); }
@@ -422,7 +424,7 @@
   }
   window.addEventListener("hashchange", routeFromHash);
   routeFromHash();
-
+ 
   var detailBack = document.getElementById("detailBack");
   if(detailBack){
     detailBack.addEventListener("click", function(e){
@@ -430,7 +432,7 @@
       location.hash = "#work";
     });
   }
-
+ 
   /* ---------------------------------------------------------------------
      NAV: scroll state + mobile menu
      --------------------------------------------------------------------- */
@@ -438,7 +440,7 @@
   function onScroll(){ nav.classList.toggle("scrolled", window.scrollY > 8); }
   window.addEventListener("scroll", onScroll, { passive: true });
   onScroll();
-
+ 
   var hamburger = document.getElementById("hamburger");
   var mobilePanel = document.getElementById("mobilePanel");
   hamburger.addEventListener("click", function(){
@@ -453,7 +455,7 @@
       document.body.style.overflow = "";
     });
   });
-
+ 
   /* ---------------------------------------------------------------------
      SCROLL REVEAL
      --------------------------------------------------------------------- */
@@ -468,7 +470,7 @@
   } else {
     revealEls.forEach(function(el){ el.classList.add("in"); });
   }
-
+ 
   /* ---------------------------------------------------------------------
      SHOWREEL (config-driven)
      --------------------------------------------------------------------- */
@@ -489,32 +491,32 @@
     // If no showreel is configured, the static placeholder already in the
     // HTML is left as-is — nothing to do here.
   }
-
+ 
   /* ---------------------------------------------------------------------
      CONTACT FORM — Netlify Forms compatible (AJAX submit, no page reload)
      --------------------------------------------------------------------- */
   var contactForm = document.getElementById("contactForm");
   var formStatus = document.getElementById("formStatus");
-
+ 
   function showFormStatus(message, kind){
     if(!formStatus) return;
     formStatus.textContent = message;
     formStatus.className = "form-status is-visible " + (kind === "error" ? "is-error" : "is-success");
   }
-
+ 
   function encodeFormData(form){
     var data = new FormData(form);
     var params = new URLSearchParams();
     data.forEach(function(value, key){ params.append(key, value); });
     return params.toString();
   }
-
+ 
   if(contactForm){
     contactForm.addEventListener("submit", function(e){
       e.preventDefault();
       var submitBtn = contactForm.querySelector('button[type="submit"]');
       if(submitBtn) submitBtn.disabled = true;
-
+ 
       fetch("/", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -536,13 +538,13 @@
       });
     });
   }
-
+ 
   /* ---------------------------------------------------------------------
      DIRECT CONTACT + FOOTER SOCIAL (config-driven, hides empty links)
      --------------------------------------------------------------------- */
   var directContact = document.getElementById("directContact");
   var footerSocial = document.getElementById("footerSocial");
-
+ 
   var directLinks = [];
   if(CONFIG.email){
     directLinks.push({ full: "Email Me", short: "Email", href: "mailto:" + CONFIG.email });
@@ -560,13 +562,13 @@
   if(CONFIG.instagram){
     directLinks.push({ full: "Follow on Instagram", short: "Instagram", href: CONFIG.instagram });
   }
-
+ 
   if(directLinks.length){
     directLinks.forEach(function(l){
       var a = document.createElement("a");
       a.href = l.href; a.textContent = l.full; a.target = "_blank"; a.rel = "noopener";
       if(directContact) directContact.appendChild(a);
-
+ 
       var fa = document.createElement("a");
       fa.href = l.href; fa.textContent = l.short; fa.target = "_blank"; fa.rel = "noopener";
       if(footerSocial) footerSocial.appendChild(fa);
@@ -574,7 +576,7 @@
   } else if(directContact){
     directContact.innerHTML = '<p class="empty-note">Add your email, WhatsApp number, or social links in config.js to show direct contact buttons here.</p>';
   }
-
+ 
   /* ---------------------------------------------------------------------
      FOOTER YEAR + NAME
      --------------------------------------------------------------------- */
@@ -582,5 +584,6 @@
   if(footerCopy){
     footerCopy.textContent = "\u00A9 " + new Date().getFullYear() + " " + CONFIG.name + ". All rights reserved.";
   }
-
+ 
 })();
+ 
