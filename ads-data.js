@@ -36,15 +36,15 @@ const ADS = [
   {
     id: "ad-2",
     label: "Ad reel — clip 2 (featured, center)",
-    videoType: "",
-    videoUrl: "",
+    videoType: "mp4",              // "mp4" | "youtube" | "vimeo" | ""
+    videoUrl: "assets/videos/ads1.mp4",
     poster: ""
   },
   {
     id: "ad-3",
     label: "Ad reel — clip 3",
-    videoType: "",
-    videoUrl: "",
+    videoType: "mp4",              // "mp4" | "youtube" | "vimeo" | ""
+    videoUrl: "assets/videos/ads1.mp4",
     poster: ""
   }
 ];
