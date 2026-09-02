@@ -91,7 +91,7 @@ const PROJECTS = [
     thumbnail: "project-01.png",                       // e.g. "assets/images/project-01.jpg"
 
     videoType: "youtube",                       // "mp4" | "youtube" | "vimeo" | ""
-    videoUrl: "https://youtu.be/LIgrSS12SbE",
+    videoUrl: "https://youtu.be/PuICQMzOfCk?si=UJP36L5FXEWqiSHG",
     orientation: "horizontal"              // "vertical" (9:16) or "horizontal" (16:9)
   },
   {
