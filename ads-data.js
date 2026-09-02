@@ -30,7 +30,7 @@ const ADS = [
     id: "ad-1",
     label: "Ad reel — clip 1",
     videoType: "youtube",              // "mp4" | "youtube" | "vimeo" | ""
-    videoUrl: "https://youtu.be/he53U4MqGMI?si=vi5uzN8fdABpfaXh",
+    videoUrl: "assets/video/ads1.mov",
     poster: "ads-01"                  // e.g. "assets/images/ad-01-poster.jpg"
   },
   {
