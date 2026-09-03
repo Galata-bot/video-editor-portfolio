@@ -52,9 +52,9 @@ const SITE_CONFIG = {
   //         e.g. "assets/images/showreel-poster.jpg"
   // orientation: "horizontal" (16:9, most showreels) or "vertical" (9:16)
   showreel: {
-    type: "",
-    url: "",
-    poster: "",
+    type: "youtube",
+    url: "https://youtu.be/PuICQMzOfCk?si=Vhk5m8prkVDIvMVQ",
+    poster: "assets/images/showreel.jpg",
     orientation: "horizontal"
   },
 
@@ -65,7 +65,7 @@ const SITE_CONFIG = {
   // Your real, final deployed site URL — fill this in once you know your
   // Netlify subdomain or custom domain (e.g. "https://galata-editor.netlify.app").
   // Used for the canonical link and Open Graph tags. Leave empty until then.
-  siteUrl: "",
+  siteUrl: "https://youtu.be/PuICQMzOfCk?si=Vhk5m8prkVDIvMVQ",
 
   // Path or URL to a social preview image, ideally 1200x630px,
   // e.g. "assets/images/social-preview.jpg"
