@@ -69,5 +69,5 @@ const SITE_CONFIG = {
 
   // Path or URL to a social preview image, ideally 1200x630px,
   // e.g. "assets/images/social-preview.jpg"
-  socialImage: "profile"
+  socialImage: "assets/images/social-preview.png"
 };
