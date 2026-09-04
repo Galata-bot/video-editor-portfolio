@@ -37,8 +37,8 @@ const SITE_CONFIG = {
   whatsappMessage: "Hello, I found your portfolio and would like to discuss a video editing project.",
 
   // Full profile URLs. Leave any of these empty to hide that icon/button.
-  linkedin: "linkedin.com/in/galata-mangistu-2a9a12339",
-  instagram: "@galata5044",
+  linkedin: "https://linkedin.com/in/galata-mangistu-2a9a12339",
+  instagram: "https://www.instagram.com/galata5044/?__pwa=1",
   youtube: "",
 
   // ---------------------------------------------------------------------
