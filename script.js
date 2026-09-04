@@ -412,7 +412,7 @@
   function closeProject(){
     homeView.style.display = "";
     detailView.classList.remove("open");
-    document.title = CONFIG.name + (CONFIG.title ? " — " + CONFIG.title : "");
+    document.title = CONFIG.name + (CONFIG.title ? " | " + CONFIG.title : "");
   }
 
   function routeFromHash(){
