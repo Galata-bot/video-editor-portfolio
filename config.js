@@ -54,7 +54,7 @@ const SITE_CONFIG = {
   showreel: {
     type: "youtube",
     url: "https://youtu.be/PuICQMzOfCk?si=Vhk5m8prkVDIvMVQ",
-    poster: "assets/images/showreel.png",
+    poster: "assets/images/showreel.jpg",
     orientation: "horizontal"
   },
 
