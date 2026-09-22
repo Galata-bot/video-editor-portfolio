@@ -143,7 +143,7 @@ const PROJECTS = [
     objective: "",
     description: "Client ad editing sample",
     approach: "Idea, motion graphics, sound design, caption",
-    thumbnail: "assets/images/project-04",
+    thumbnail: "assets/images/project-04.jpg",
     videoType: "youtube",
     videoUrl: "https://youtube.com/shorts/KOzhEspok1c",
     orientation: "vertical"
