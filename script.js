@@ -47,6 +47,62 @@
     return url.trim();
   }
 
+  function createVideoModal(){
+    var modal = document.getElementById("videoModal");
+    if(modal) return modal;
+
+    modal = document.createElement("div");
+    modal.id = "videoModal";
+    modal.className = "video-modal is-hidden";
+    modal.setAttribute("aria-hidden", "true");
+    modal.innerHTML = '<div class="video-modal__backdrop" data-close="true"></div>' +
+      '<div class="video-modal__panel" role="dialog" aria-modal="true" aria-label="Project video preview">' +
+      '<button type="button" class="video-modal__close" aria-label="Close video">Close</button>' +
+      '<div class="video-modal__stage"></div>' +
+      '</div>';
+
+    modal.querySelector(".video-modal__backdrop").addEventListener("click", closeVideoModal);
+    modal.querySelector(".video-modal__close").addEventListener("click", closeVideoModal);
+
+    document.addEventListener("keydown", function(e){
+      if(e.key === "Escape" && modal && !modal.classList.contains("is-hidden")){
+        closeVideoModal();
+      }
+    });
+
+    document.body.appendChild(modal);
+    return modal;
+  }
+
+  function openVideoModal(project){
+    if(!project || !(project.videoType && project.videoUrl)) return;
+
+    var modal = createVideoModal();
+    var stage = modal.querySelector(".video-modal__stage");
+    if(!stage) return;
+
+    stage.innerHTML = "";
+    var wrap = buildMediaEmbed(project, { forceAutoplay: true });
+    loadRealMedia(wrap, project);
+    stage.appendChild(wrap);
+
+    modal.classList.remove("is-hidden");
+    modal.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeVideoModal(){
+    var modal = document.getElementById("videoModal");
+    if(!modal) return;
+
+    var stage = modal.querySelector(".video-modal__stage");
+    if(stage) stage.innerHTML = "";
+
+    modal.classList.add("is-hidden");
+    modal.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+  }
+
   /* ---------------------------------------------------------------------
      REUSABLE VIDEO COMPONENT
      Builds a lazy-loading media embed: shows a poster/thumbnail with a
@@ -80,6 +136,12 @@
         staticInner.appendChild(fallback);
       }
       wrap.appendChild(staticInner);
+      return wrap;
+    }
+
+    if(options.forceAutoplay){
+      wrap.classList.add("media-embed--active");
+      loadRealMedia(wrap, project);
       return wrap;
     }
 
@@ -199,9 +261,16 @@
 
     filtered.slice(0, visibleCount).forEach(function(p){
       var card = document.createElement("a");
-      card.href = "#/work/" + encodeURIComponent(p.id);
+      card.href = (p.videoType && p.videoUrl) ? "#" : "#/work/" + encodeURIComponent(p.id);
       card.className = "work-card reveal in";
       card.dataset.id = p.id;
+
+      card.addEventListener("click", function(e){
+        if(p.videoType && p.videoUrl){
+          e.preventDefault();
+          openVideoModal(p);
+        }
+      });
 
       var frame = document.createElement("div");
       frame.className = "frame";
@@ -441,18 +510,20 @@
 
   var hamburger = document.getElementById("hamburger");
   var mobilePanel = document.getElementById("mobilePanel");
-  hamburger.addEventListener("click", function(){
-    var open = mobilePanel.classList.toggle("open");
-    hamburger.setAttribute("aria-expanded", open);
-    document.body.style.overflow = open ? "hidden" : "";
-  });
-  mobilePanel.querySelectorAll("a").forEach(function(a){
-    a.addEventListener("click", function(){
-      mobilePanel.classList.remove("open");
-      hamburger.setAttribute("aria-expanded", "false");
-      document.body.style.overflow = "";
+  if(hamburger && mobilePanel){
+    hamburger.addEventListener("click", function(){
+      var open = mobilePanel.classList.toggle("open");
+      hamburger.setAttribute("aria-expanded", open);
+      document.body.style.overflow = open ? "hidden" : "";
     });
-  });
+    mobilePanel.querySelectorAll("a").forEach(function(a){
+      a.addEventListener("click", function(){
+        mobilePanel.classList.remove("open");
+        hamburger.setAttribute("aria-expanded", "false");
+        document.body.style.overflow = "";
+      });
+    });
+  }
 
   /* ---------------------------------------------------------------------
      SCROLL REVEAL
