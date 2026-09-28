@@ -274,9 +274,7 @@
 
       var frame = document.createElement("div");
       frame.className = "frame";
-      if(p.orientation === "horizontal"){
-        frame.classList.add("frame--horizontal");
-      }
+      frame.classList.add(p.orientation === "horizontal" ? "frame--horizontal" : "frame--vertical");
 
       if(p.featured){
         var flag = document.createElement("div");

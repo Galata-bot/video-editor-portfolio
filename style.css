@@ -180,15 +180,16 @@ a.reel-frame:hover{ border-color: var(--accent); }
    ============================================================================= */
 .work-grid{ display:grid; grid-template-columns: repeat(3, 1fr); gap: 28px 24px; }
 .work-card{
-  display:block; text-align:left; background:none; border:none; padding:0; width:100%;
+  display:block; text-align:left; background:none; border:none; padding:0; width:100%; max-width: 360px; margin: 0 auto;
 }
 .work-card.is-hidden{ display:none; }
 .work-card .frame{
-  aspect-ratio: 9/16; background: var(--surface); border:1px solid var(--border); border-radius: var(--radius-md);
+  aspect-ratio: 16/10; background: var(--surface); border:1px solid var(--border); border-radius: var(--radius-md);
   position:relative; overflow:hidden; transition: border-color var(--dur) var(--ease);
   display:flex; align-items:center; justify-content:center;
 }
 .work-card .frame.frame--horizontal{ aspect-ratio: 16/9; }
+.work-card .frame.frame--vertical{ aspect-ratio: 9/16; }
 .work-card .frame img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
 .work-card:hover .frame{ border-color: var(--accent); }
 .work-card .frame .title-mark{
@@ -438,3 +439,4 @@ footer{ border-top: 1px solid var(--border); padding: 48px 0; }
   .detail-nav-link.detail-nav-next{ text-align:left; align-items:flex-start; margin-left:0; }
   .video-modal__stage .media-embed--vertical{ max-width: min(70vh * 9 / 16, 320px); }
 }
+
