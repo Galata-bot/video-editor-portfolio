@@ -178,18 +178,20 @@ a.reel-frame:hover{ border-color: var(--accent); }
 /* =============================================================================
    WORK GRID
    ============================================================================= */
-.work-grid{ display:grid; grid-template-columns: repeat(3, 1fr); gap: 28px 24px; }
+.work-grid{ display:grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px 14px; }
 .work-card{
-  display:block; text-align:left; background:none; border:none; padding:0; width:100%; max-width: 360px; margin: 0 auto;
+  display:block; text-align:left; background:none; border:none; padding:0; width:100%; max-width:none; margin: 0;
 }
 .work-card.is-hidden{ display:none; }
 .work-card .frame{
-  aspect-ratio: 16/10; background: var(--surface); border:1px solid var(--border); border-radius: var(--radius-md);
+  width:100%; aspect-ratio: 16/10; background: var(--surface); border:1px solid var(--border); border-radius: var(--radius-md);
   position:relative; overflow:hidden; transition: border-color var(--dur) var(--ease);
   display:flex; align-items:center; justify-content:center;
 }
 .work-card .frame.frame--horizontal{ aspect-ratio: 16/9; }
-.work-card .frame.frame--vertical{ aspect-ratio: 9/16; max-height: 240px; }
+.work-card .frame.frame--vertical{
+  aspect-ratio: 9/16; max-width: 280px; max-height: 240px; width: 100%; margin: 0 auto;
+}
 .work-card .frame img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
 .work-card:hover .frame{ border-color: var(--accent); }
 .work-card .frame .title-mark{
@@ -262,7 +264,7 @@ a.reel-frame:hover{ border-color: var(--accent); }
   position:relative; overflow:hidden; width:100%; max-height:80vh;
 }
 .media-embed--horizontal{ aspect-ratio: 16/9; }
-.media-embed--vertical{ aspect-ratio: 9/16; max-width: 420px; }
+.media-embed--vertical{ aspect-ratio: 9/16; max-width: 280px; width: 100%; }
 
 .media-poster{
   position:absolute; inset:0; width:100%; height:100%; background:none; border:none; padding:0;
@@ -416,8 +418,8 @@ footer{ border-top: 1px solid var(--border); padding: 48px 0; }
   .reel-cluster{ justify-content:flex-start; margin-top: 40px; gap: 10px; }
   .reel-frame{ width: 88px; }
   .reel-frame.big{ width: 136px; }
-  .work-grid{ grid-template-columns: repeat(2, 1fr); }
-  .work-card .frame.frame--vertical{ max-height: 200px; }
+  .work-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .work-card .frame.frame--vertical{ max-width: 220px; max-height: 200px; }
   .service-row{ grid-template-columns: 40px 1fr; }
   .service-row p{ grid-column: 2 / 3; }
   .about-grid{ grid-template-columns: 1fr; }
@@ -429,7 +431,7 @@ footer{ border-top: 1px solid var(--border); padding: 48px 0; }
 }
 @media (max-width: 600px){
   .work-grid{ grid-template-columns: 1fr 1fr; gap:16px; }
-  .work-card .frame.frame--vertical{ max-height: 160px; }
+  .work-card .frame.frame--vertical{ max-width: 170px; max-height: 160px; }
   .why-grid{ grid-template-columns: 1fr; }
   .nav-inner{ height:64px; }
   .mobile-panel{ inset: 64px 0 0 0; }
