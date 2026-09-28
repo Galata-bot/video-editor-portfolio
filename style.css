@@ -295,14 +295,14 @@ a.reel-frame:hover{ border-color: var(--accent); }
 
 .video-modal{
   position:fixed; inset:0; z-index:1200; display:flex; align-items:center; justify-content:center;
-  padding: clamp(20px, 5vw, 56px);
+  padding: 16px;
 }
 .video-modal.is-hidden{ display:none; }
 .video-modal__backdrop{
   position:absolute; inset:0; background: rgba(4,4,6,.82); backdrop-filter: blur(3px);
 }
 .video-modal__panel{
-  position:relative; width:min(92vw, 1100px); max-height:90vh; background: rgba(16,16,18,.98);
+  position:relative; width:min(98vw, 1100px); max-height:92vh; background: rgba(16,16,18,.98);
   border:1px solid var(--border); border-radius: 12px; overflow:hidden; box-shadow: 0 32px 80px rgba(0,0,0,.45);
 }
 .video-modal__close{
@@ -310,13 +310,23 @@ a.reel-frame:hover{ border-color: var(--accent); }
   color: var(--text); border-radius: 999px; padding: 8px 12px; font-size:12px; font-family: var(--font-mono);
 }
 .video-modal__stage{
-  position:relative; width:100%; min-height: 220px; display:flex; align-items:center; justify-content:center; padding: 42px 20px 20px;
+  position:relative; width:100%; display:flex; align-items:center; justify-content:center; padding: 36px 16px 16px;
+  max-height: calc(92vh - 60px);
+  overflow-y: auto;
 }
 .video-modal__stage .media-embed{
-  width:min(100%, 1000px); max-height:78vh; border-radius: 10px;
+  width:100%; max-height: calc(92vh - 80px); border-radius: 10px;
 }
-.video-modal__stage .media-embed--horizontal{ width:100%; }
-.video-modal__stage .media-embed--vertical{ max-width:min(44vw, 420px); }
+.video-modal__stage .media-embed--horizontal{
+  width: 100%;
+  aspect-ratio: 16/9;
+  max-height: calc(92vh - 80px);
+}
+.video-modal__stage .media-embed--vertical{
+  aspect-ratio: 9/16;
+  max-width: min(50vh * 9 / 16, 380px);
+  max-height: calc(92vh - 80px);
+}
 
 /* =============================================================================
    CONTACT
@@ -426,4 +436,5 @@ footer{ border-top: 1px solid var(--border); padding: 48px 0; }
   .reel-frame.big{ width: 112px; }
   .detail-nav{ flex-direction:column; align-items:flex-start; }
   .detail-nav-link.detail-nav-next{ text-align:left; align-items:flex-start; margin-left:0; }
+  .video-modal__stage .media-embed--vertical{ max-width: min(70vh * 9 / 16, 320px); }
 }
