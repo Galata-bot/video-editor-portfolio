@@ -161,7 +161,7 @@ const PROJECTS = [
     objective: "",
     description: "A self-initiated video editing project created to showcase my editing skills.",
     approach: "Editing, captions, pacing, motion graphics, sound design",
-    thumbnail: "assets/images/project-05.jpg",
+    thumbnail: "assets/images/project-05.png",
     videoType: "youtube",
     videoUrl: "https://youtu.be/UMoDecf0468?si=_YD9zBkZeRib1YD-",
     orientation: "vertical"
