@@ -600,10 +600,8 @@
           throw new Error("Form submission failed");
         }
       }).catch(function(){
-        // Fall back to a normal (non-AJAX) form submission, which still
-        // works with Netlify Forms once the site is deployed.
-        showFormStatus("Sending the normal way — one moment...", "success");
-        contactForm.submit();
+        var alt = CONFIG.email ? " Please email me directly at " + CONFIG.email + "." : " Please contact me directly.";
+        showFormStatus("Sorry, your message could not be sent." + alt, "error");
       }).finally(function(){
         if(submitBtn) submitBtn.disabled = false;
       });
@@ -622,7 +620,7 @@
   }
   if(CONFIG.whatsapp){
     var waMsg = encodeURIComponent(CONFIG.whatsappMessage || "");
-    directLinks.push({ full: "Message on WhatsApp", short: "WhatsApp", href: "https://wa.me/" + CONFIG.whatsapp + (waMsg ? "?text=" + waMsg : "") });
+    directLinks.push({ full: "Message on WhatsApp", short: "WhatsApp", href: "https://wa.me/" + String(CONFIG.whatsapp).replace(/\D/g, "") + (waMsg ? "?text=" + waMsg : "") });
   }
   if(CONFIG.linkedin){
     directLinks.push({ full: "Connect on LinkedIn", short: "LinkedIn", href: CONFIG.linkedin });
