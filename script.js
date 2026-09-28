@@ -263,6 +263,7 @@
       var card = document.createElement("a");
       card.href = (p.videoType && p.videoUrl) ? "#" : "#/work/" + encodeURIComponent(p.id);
       card.className = "work-card reveal in";
+      card.classList.add(p.orientation === "horizontal" ? "work-card--horizontal" : "work-card--vertical");
       card.dataset.id = p.id;
 
       card.addEventListener("click", function(e){
