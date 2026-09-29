@@ -95,7 +95,7 @@ const PROJECTS = [
     orientation: "horizontal"              // "vertical" (9:16) or "horizontal" (16:9)
   },
   {
-    id: "02",
+    id: "04",
     title: "Product promotion",
     category: "Talking Head",
     duration: "01:34",
@@ -113,7 +113,7 @@ const PROJECTS = [
     orientation: "vertical"
   },
   {
-    id: "03",
+    id: "05",
     title: "Gym Exercise",
     category: "Short-form",
     duration: "00:25",
@@ -131,7 +131,7 @@ const PROJECTS = [
     orientation: "vertical"
   },
   {
-    id: "04",
+    id: "06",
     title: "Ad",
     category: "Educational",
     duration: "01:12",
@@ -149,7 +149,7 @@ const PROJECTS = [
     orientation: "vertical"
   },
   {
-    id: "05",
+    id: "02",
     title: "Video Editing",
     category: "Promotional",
     duration: "00:27",
@@ -167,7 +167,7 @@ const PROJECTS = [
     orientation: "vertical"
   },
   {
-    id: "06",
+    id: "03",
     title: "Client Video",
     category: "YouTube",
     duration: "08:40",
@@ -182,7 +182,7 @@ const PROJECTS = [
     thumbnail: "assets/images/project-06.png",
     videoType: "youtube",
     videoUrl: "https://youtube.com/shorts/64iHGg3ZdRs?feature=share",
-    orientation: "horizontal"
+    orientation: "vertical"
   },
   {
     id: "07",
