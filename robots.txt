@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://galata-video-editor-portifolio.netlify.app/sitemap.xml

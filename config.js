@@ -17,7 +17,7 @@ const SITE_CONFIG = {
 
   // Short professional title — shown in the browser tab and meta description.
   // Example: "Short-Form Video Editor"
-  title: "Video Editor",
+  title: "Short-Form Video Editor",
 
   // ---------------------------------------------------------------------
   // DIRECT CONTACT
@@ -65,7 +65,7 @@ const SITE_CONFIG = {
   // Your real, final deployed site URL — fill this in once you know your
   // Netlify subdomain or custom domain (e.g. "https://galata-editor.netlify.app").
   // Used for the canonical link and Open Graph tags. Leave empty until then.
-  siteUrl: "galata-video-editor-portifolio.netlify.app",
+  siteUrl: "https://galata-video-editor-portifolio.netlify.app",
 
   // Path or URL to a social preview image, ideally 1200x630px,
   // e.g. "assets/images/social-preview.jpg"
