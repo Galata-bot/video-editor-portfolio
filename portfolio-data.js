@@ -95,7 +95,7 @@ const PROJECTS = [
     orientation: "horizontal"              // "vertical" (9:16) or "horizontal" (16:9)
   },
   {
-    id: "04",
+    id: "02",
     title: "Product promotion",
     category: "Talking Head",
     duration: "01:34",
@@ -109,11 +109,11 @@ const PROJECTS = [
     approach: "I focused on clean pacing and precise cuts to keep the 31-second edit engaging from start to finish. I used smooth, purposeful transitions where needed, balanced the audio with music and sound effects, and refined the timing of each shot to create a cohesive flow. The raw footage was shaped into a polished 16:9 showcase piece with a professional visual and audio finish.",
     thumbnail: "assets/images/project-02.jpg",
     videoType: "youtube",
-    videoUrl: "https://youtu.be/wkQgZcQKszY?si=GQKntinrZaAHb4RY",
+    videoUrl: "https://youtu.be/UMoDecf0468?si=_YD9zBkZeRib1YD-",
     orientation: "vertical"
   },
   {
-    id: "05",
+    id: "03",
     title: "Gym Exercise",
     category: "Short-form",
     duration: "00:25",
@@ -127,11 +127,11 @@ const PROJECTS = [
     approach: "pacing, quick cut",
     thumbnail: "assets/images/project-03.jpg",
     videoType: "youtube",
-    videoUrl: "https://youtu.be/k_hV2Pc9Zrw?si=pejgFIUeYVExwACp",
+    videoUrl: "https://youtube.com/shorts/64iHGg3ZdRs?feature=share",
     orientation: "vertical"
   },
   {
-    id: "06",
+    id: "04",
     title: "Ad",
     category: "Educational",
     duration: "01:12",
@@ -145,11 +145,11 @@ const PROJECTS = [
     approach: "Idea, motion graphics, sound design, caption",
     thumbnail: "assets/images/project-04.jpg",
     videoType: "youtube",
-    videoUrl: "https://youtube.com/shorts/KOzhEspok1c",
+    videoUrl: "https://youtu.be/wkQgZcQKszY?si=GQKntinrZaAHb4RY",
     orientation: "vertical"
   },
   {
-    id: "02",
+    id: "05",
     title: "Video Editing",
     category: "Promotional",
     duration: "00:27",
@@ -163,11 +163,11 @@ const PROJECTS = [
     approach: "Editing, captions, pacing, motion graphics, sound design",
     thumbnail: "assets/images/project-05.png",
     videoType: "youtube",
-    videoUrl: "https://youtu.be/UMoDecf0468?si=_YD9zBkZeRib1YD-",
+    videoUrl: "https://youtu.be/k_hV2Pc9Zrw?si=pejgFIUeYVExwACp",
     orientation: "vertical"
   },
   {
-    id: "03",
+    id: "06",
     title: "Client Video",
     category: "YouTube",
     duration: "08:40",
@@ -181,7 +181,7 @@ const PROJECTS = [
     approach: "Describe your editing approach here.",
     thumbnail: "assets/images/project-06.png",
     videoType: "youtube",
-    videoUrl: "https://youtube.com/shorts/64iHGg3ZdRs?feature=share",
+    videoUrl: "https://youtube.com/shorts/KOzhEspok1c",
     orientation: "vertical"
   },
   {
