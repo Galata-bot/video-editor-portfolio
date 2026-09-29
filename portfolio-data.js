@@ -150,7 +150,7 @@ const PROJECTS = [
   },
   {
     id: "05",
-    title: "Project Title",
+    title: "Video Editing",
     category: "Promotional",
     duration: "00:27",
     platform: "TikTok, Instagram Reels",
@@ -168,7 +168,7 @@ const PROJECTS = [
   },
   {
     id: "06",
-    title: "Project Title",
+    title: "Client Video",
     category: "YouTube",
     duration: "08:40",
     platform: "YouTube",
@@ -179,9 +179,9 @@ const PROJECTS = [
     objective: "",
     description: "Add your project description here.",
     approach: "Describe your editing approach here.",
-    thumbnail: "",
-    videoType: "",
-    videoUrl: "",
+    thumbnail: "assets/images/project-06.png",
+    videoType: "youtube",
+    videoUrl: "https://youtube.com/shorts/64iHGg3ZdRs?feature=share",
     orientation: "horizontal"
   },
   {
