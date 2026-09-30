@@ -73,7 +73,7 @@ const CATEGORIES = [
 const PROJECTS = [
   {
     id: "01",
-    title: "Self promotion",
+    title: "Skill promo",
     category: "16:9",              // see CATEGORIES above — or use "Other"
     duration: "00:31",                   // shown as meta text (running time)
     platform: "TikTok, Instagram Reels, Youtube",
@@ -88,7 +88,7 @@ const PROJECTS = [
     description: "A self-initiated video editing project created to showcase my editing skills.",
     approach: "I focused on clean pacing and precise cuts to keep the 31-second edit engaging from start to finish. I used smooth, purposeful transitions where needed, balanced the audio with music and sound effects, and refined the timing of each shot to create a cohesive flow. The raw footage was shaped into a polished 16:9 showcase piece with a professional visual and audio finish.",
 
-    thumbnail: "assets/images/project-01.png",                       // e.g. "assets/images/project-01.jpg"
+    thumbnail: "assets/images/1st-promor.png",                       // e.g. "assets/images/project-01.jpg"
 
     videoType: "youtube",                       // "mp4" | "youtube" | "vimeo" | ""
     videoUrl: "https://youtu.be/PuICQMzOfCk?si=UJP36L5FXEWqiSHG",
@@ -96,7 +96,7 @@ const PROJECTS = [
   },
   {
     id: "02",
-    title: "Product promotion",
+    title: "video editing",
     category: "Talking Head",
     duration: "01:34",
     platform: "YouTube Shorts, Instagram",
@@ -107,14 +107,14 @@ const PROJECTS = [
     objective: "",
     description: "A self-initiated video editing project created to showcase my editing skills.",
     approach: "I focused on clean pacing and precise cuts to keep the 31-second edit engaging from start to finish. I used smooth, purposeful transitions where needed, balanced the audio with music and sound effects, and refined the timing of each shot to create a cohesive flow. The raw footage was shaped into a polished 16:9 showcase piece with a professional visual and audio finish.",
-    thumbnail: "assets/images/project-02.jpg",
+    thumbnail: "assets/images/video-editing.png",
     videoType: "youtube",
     videoUrl: "https://youtu.be/UMoDecf0468?si=_YD9zBkZeRib1YD-",
     orientation: "vertical"
   },
   {
     id: "03",
-    title: "Gym Exercise",
+    title: "client video",
     category: "Short-form",
     duration: "00:25",
     platform: "Instagram Reels, Facebook Reels,YouTube shorts",
@@ -125,14 +125,14 @@ const PROJECTS = [
     objective: "",
     description: "Project from an Instagram reel for one of my clients.",
     approach: "pacing, quick cut",
-    thumbnail: "assets/images/project-03.jpg",
+    thumbnail: "assets/images/through-email.png",
     videoType: "youtube",
     videoUrl: "https://youtube.com/shorts/64iHGg3ZdRs?feature=share",
     orientation: "vertical"
   },
   {
     id: "04",
-    title: "Ad",
+    title: "Product promo",
     category: "Educational",
     duration: "01:12",
     platform: "YouTube Shorts",
@@ -143,14 +143,14 @@ const PROJECTS = [
     objective: "",
     description: "Client ad editing sample",
     approach: "Idea, motion graphics, sound design, caption",
-    thumbnail: "assets/images/project-04.jpg",
+    thumbnail: "assets/images/dolby.jpg",
     videoType: "youtube",
     videoUrl: "https://youtu.be/wkQgZcQKszY?si=GQKntinrZaAHb4RY",
     orientation: "vertical"
   },
   {
     id: "05",
-    title: "Video Editing",
+    title: "Gym",
     category: "Promotional",
     duration: "00:27",
     platform: "TikTok, Instagram Reels",
@@ -161,14 +161,14 @@ const PROJECTS = [
     objective: "",
     description: "A self-initiated video editing project created to showcase my editing skills.",
     approach: "Editing, captions, pacing, motion graphics, sound design",
-    thumbnail: "assets/images/project-05.png",
+    thumbnail: "assets/images/gyme.jpg",
     videoType: "youtube",
     videoUrl: "https://youtu.be/k_hV2Pc9Zrw?si=pejgFIUeYVExwACp",
     orientation: "vertical"
   },
   {
     id: "06",
-    title: "Client Video",
+    title: "ad",
     category: "YouTube",
     duration: "08:40",
     platform: "YouTube",
@@ -179,7 +179,7 @@ const PROJECTS = [
     objective: "",
     description: "Add your project description here.",
     approach: "Describe your editing approach here.",
-    thumbnail: "assets/images/project-06.png",
+    thumbnail: "assets/images/yuminqo.jpg",
     videoType: "youtube",
     videoUrl: "https://youtube.com/shorts/KOzhEspok1c",
     orientation: "vertical"
