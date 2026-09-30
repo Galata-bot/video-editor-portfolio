@@ -425,7 +425,7 @@ footer{ border-top: 1px solid var(--border); padding: 48px 0; }
   .detail-nav-link.detail-nav-next{ margin-left:0; }
 }
 @media (max-width: 600px){
-   .work-grid{ --thumb-h: 200px; gap:16px 12px; justify-content:center; }
+   .work-grid{ --thumb-h: 200px; gap:28px 20px; justify-content:center; }
   .why-grid{ grid-template-columns: 1fr; }
   .nav-inner{ height:64px; }
   .mobile-panel{ inset: 64px 0 0 0; }
