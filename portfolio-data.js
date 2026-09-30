@@ -197,7 +197,7 @@ const PROJECTS = [
     objective: "",
     description: "Add your project description here.",
     approach: "Describe your editing approach here.",
-    thumbnail: "assets/images/documentary.jpg",
+    thumbnail: "assets/images/documentary.png",
     videoType: "long-form",
     videoUrl: "https://youtu.be/0dnEJaz5fkY",
     orientation: "horizontal"
