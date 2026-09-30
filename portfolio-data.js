@@ -186,7 +186,7 @@ const PROJECTS = [
   },
   {
     id: "07",
-    title: "Project Title",
+    title: "Documentary",
     category: "Short Film",
     duration: "04:20",
     platform: "YouTube, Film Festival Submission",
@@ -197,9 +197,9 @@ const PROJECTS = [
     objective: "",
     description: "Add your project description here.",
     approach: "Describe your editing approach here.",
-    thumbnail: "",
-    videoType: "",
-    videoUrl: "",
+    thumbnail: "assets/images/documentary.jpg",
+    videoType: "long-form",
+    videoUrl: "https://youtu.be/0dnEJaz5fkY",
     orientation: "horizontal"
   }
 ];
