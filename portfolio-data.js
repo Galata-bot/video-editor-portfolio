@@ -199,7 +199,7 @@ const PROJECTS = [
     approach: "Describe your editing approach here.",
     thumbnail: "assets/images/documentary.png",
     videoType: "youtube",
-    videoUrl: "https://youtu.be/0dnEJaz5fkY",
+    videoUrl: "https://youtu.be/WnZXVlf7UH8",
     orientation: "horizontal"
   }
 ];
