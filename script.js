@@ -214,7 +214,7 @@
   var filterTabsEl = document.getElementById("filterTabs");
   var grid = document.getElementById("workGrid");
   var loadMoreBtn = document.getElementById("loadMoreBtn");
-  var PAGE_SIZE = 6;
+  var PAGE_SIZE = 10;
   var visibleCount = PAGE_SIZE;
   var activeFilter = "all";
 
