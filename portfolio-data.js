@@ -180,7 +180,7 @@ const PROJECTS = [
     description: "Add your project description here.",
     approach: "Describe your editing approach here.",
     thumbnail: "",
-    videoType: "youtube",
+    videoType: "",
     videoUrl: "",
     orientation: "vertical"
   },
@@ -198,7 +198,7 @@ const PROJECTS = [
     description: "Add your project description here.",
     approach: "Describe your editing approach here.",
     thumbnail: "",
-    videoType: "youtube",
+    videoType: "",
     videoUrl: "",
     orientation: "horizontal"
   }
