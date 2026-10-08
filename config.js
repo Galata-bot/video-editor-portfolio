@@ -53,7 +53,7 @@ const SITE_CONFIG = {
   // orientation: "horizontal" (16:9, most showreels) or "vertical" (9:16)
   showreel: {
     type: "youtube",
-    url: "https://youtu.be/PuICQMzOfCk?si=Vhk5m8prkVDIvMVQ",
+    url: "https://youtu.be/431KmJOTvU4",
     poster: "assets/images/showreel.jpg",
     orientation: "horizontal"
   },
