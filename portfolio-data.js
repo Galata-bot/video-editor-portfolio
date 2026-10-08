@@ -166,40 +166,5 @@ const PROJECTS = [
     videoUrl: "https://youtube.com/shorts/_1EWAsIR6F0?feature=share",
     orientation: "vertical"
   },
-  {
-    id: "06",
-    title: "ad",
-    category: "YouTube",
-    duration: "08:40",
-    platform: "YouTube",
-    services: "Editing, sound design, color grading, motion graphics",
-    featured: false,
-    client: "",
-    date: "",
-    objective: "",
-    description: "Add your project description here.",
-    approach: "Describe your editing approach here.",
-    thumbnail: "",
-    videoType: "",
-    videoUrl: "",
-    orientation: "vertical"
-  },
-  {
-    id: "07",
-    title: "Documentary",
-    category: "Short Film",
-    duration: "04:20",
-    platform: "YouTube, Film Festival Submission",
-    services: "Editing, color grading, sound design",
-    featured: false,
-    client: "",
-    date: "",
-    objective: "",
-    description: "Add your project description here.",
-    approach: "Describe your editing approach here.",
-    thumbnail: "",
-    videoType: "",
-    videoUrl: "",
-    orientation: "horizontal"
-  }
+
 ];
