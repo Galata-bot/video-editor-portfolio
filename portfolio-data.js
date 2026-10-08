@@ -91,7 +91,7 @@ const PROJECTS = [
     thumbnail: "assets/images/1st-promo.png",                       // e.g. "assets/images/project-01.jpg"
 
     videoType: "youtube",                       // "mp4" | "youtube" | "vimeo" | ""
-    videoUrl: "https://youtu.be/PuICQMzOfCk?si=UJP36L5FXEWqiSHG",
+    videoUrl: "https://youthttps://youtu.be/431KmJOTvU4",
     orientation: "horizontal"              // "vertical" (9:16) or "horizontal" (16:9)
   },
   {
@@ -109,7 +109,7 @@ const PROJECTS = [
     approach: "I focused on clean pacing and precise cuts to keep the 31-second edit engaging from start to finish. I used smooth, purposeful transitions where needed, balanced the audio with music and sound effects, and refined the timing of each shot to create a cohesive flow. The raw footage was shaped into a polished 16:9 showcase piece with a professional visual and audio finish.",
     thumbnail: "assets/images/video-editing.png",
     videoType: "youtube",
-    videoUrl: "https://youtu.be/UMoDecf0468?si=_YD9zBkZeRib1YD-",
+    videoUrl: "https://youtube.com/shorts/THKlrDlPp4w?feature=share",
     orientation: "vertical"
   },
   {
@@ -127,7 +127,7 @@ const PROJECTS = [
     approach: "pacing, quick cut",
     thumbnail: "assets/images/through-email.png",
     videoType: "youtube",
-    videoUrl: "https://youtube.com/shorts/64iHGg3ZdRs?feature=share",
+    videoUrl: "https://youtube.com/shorts/RHonISw27iE?feature=share",
     orientation: "vertical"
   },
   {
@@ -145,7 +145,7 @@ const PROJECTS = [
     approach: "Idea, motion graphics, sound design, caption",
     thumbnail: "assets/images/dolby.jpg",
     videoType: "youtube",
-    videoUrl: "https://youtu.be/wkQgZcQKszY?si=GQKntinrZaAHb4RY",
+    videoUrl: "https://youtube.com/shorts/GWKseKetY3c",
     orientation: "vertical"
   },
   {
@@ -161,9 +161,9 @@ const PROJECTS = [
     objective: "",
     description: "A self-initiated video editing project created to showcase my editing skills.",
     approach: "Editing, captions, pacing, motion graphics, sound design",
-    thumbnail: "assets/images/gyme.jpg",
+    thumbnail: "assets/images/yuminqo.jpg",
     videoType: "youtube",
-    videoUrl: "https://youtu.be/k_hV2Pc9Zrw?si=pejgFIUeYVExwACp",
+    videoUrl: "https://youtube.com/shorts/_1EWAsIR6F0?feature=share",
     orientation: "vertical"
   },
   {
@@ -179,9 +179,9 @@ const PROJECTS = [
     objective: "",
     description: "Add your project description here.",
     approach: "Describe your editing approach here.",
-    thumbnail: "assets/images/yuminqo.jpg",
+    thumbnail: "",
     videoType: "youtube",
-    videoUrl: "https://youtube.com/shorts/KOzhEspok1c",
+    videoUrl: "",
     orientation: "vertical"
   },
   {
@@ -197,9 +197,9 @@ const PROJECTS = [
     objective: "",
     description: "Add your project description here.",
     approach: "Describe your editing approach here.",
-    thumbnail: "assets/images/documentary.png",
+    thumbnail: "",
     videoType: "youtube",
-    videoUrl: "https://youtu.be/WnZXVlf7UH8",
+    videoUrl: "",
     orientation: "horizontal"
   }
 ];
