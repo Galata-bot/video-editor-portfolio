@@ -132,7 +132,7 @@ const PROJECTS = [
   },
   {
     id: "04",
-    title: "Product promo",
+    title: "Talking head",
     category: "Educational",
     duration: "01:12",
     platform: "YouTube Shorts",
@@ -143,14 +143,14 @@ const PROJECTS = [
     objective: "",
     description: "Client ad editing sample",
     approach: "Idea, motion graphics, sound design, caption",
-    thumbnail: "assets/images/dolby.jpg",
+    thumbnail: "assets/images/talking-head.jpg",
     videoType: "youtube",
-    videoUrl: "https://youtube.com/shorts/GWKseKetY3c",
+    videoUrl: "https://youtu.be/d3uLRZnxeMs?si=esemBo_zbACHsweD",
     orientation: "vertical"
   },
   {
     id: "05",
-    title: "Gym",
+    title: "Ad",
     category: "Promotional",
     duration: "00:27",
     platform: "TikTok, Instagram Reels",
@@ -166,5 +166,22 @@ const PROJECTS = [
     videoUrl: "https://youtube.com/shorts/_1EWAsIR6F0?feature=share",
     orientation: "vertical"
   },
-
+ {
+    id: "05",
+    title: "16:9 talking head",
+    category: "Promotional",
+    duration: "00:27",
+    platform: "TikTok, Instagram Reels",
+    services: "Editing, color grading, sound design",
+    featured: true,
+    client: "",
+    date: "",
+    objective: "",
+    description: "A self-initiated video editing project created to showcase my editing skills.",
+    approach: "Editing, captions, pacing, motion graphics, sound design",
+    thumbnail: "assets/images/yuminqo.jpg",
+    videoType: "youtube",
+    videoUrl: "https://youtube.com/shorts/_1EWAsIR6F0?feature=share",
+    orientation: "vertical"
+  },
 ];
