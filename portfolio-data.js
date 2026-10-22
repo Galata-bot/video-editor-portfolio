@@ -167,7 +167,7 @@ const PROJECTS = [
     orientation: "vertical"
   },
  {
-    id: "05",
+    id: "06",
     title: "16:9 talking head",
     category: "Promotional",
     duration: "00:27",
@@ -179,9 +179,27 @@ const PROJECTS = [
     objective: "",
     description: "A self-initiated video editing project created to showcase my editing skills.",
     approach: "Editing, captions, pacing, motion graphics, sound design",
-    thumbnail: "assets/images/talking-head.jpg",
+    thumbnail: "assets/images/horizontal-talking-head.jpg",
     videoType: "youtube",
-    videoUrl: "https://youtube.com/shorts/_1EWAsIR6F0?feature=share",
-    orientation: "vertical"
+    videoUrl: "https://youtu.be/xZwMtlCX8-8?si=U_OxYeJAV1XLMeyD",
+    orientation: "horizontal"
+  },
+    {
+    id: "07",
+    title: "16:9 talking head 2",
+    category: "Promotional",
+    duration: "00:27",
+    platform: "TikTok, Instagram Reels",
+    services: "Editing, color grading, sound design",
+    featured: true,
+    client: "",
+    date: "",
+    objective: "",
+    description: "A self-initiated video editing project created to showcase my editing skills.",
+    approach: "Editing, captions, pacing, motion graphics, sound design",
+    thumbnail: "assets/images/horizontal-talking-head2.jpg",
+    videoType: "youtube",
+    videoUrl: "https://youtu.be/an-IUQgrDN4?si=gID2HRZNoNZkhOhD",
+    orientation: "horizontal"
   },
 ];
