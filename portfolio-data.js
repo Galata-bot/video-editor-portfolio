@@ -74,7 +74,7 @@ const PROJECTS = [
   {
     id: "08",
     title: "Screen Recording Edit",
-    category: "YouTube",
+    category: "Talking Head, Promotional",
     duration: "",
     platform: "YouTube",
     services: "Editing",
@@ -92,7 +92,7 @@ const PROJECTS = [
   {
     id: "07",
     title: "16:9 Talking Head Edit",
-    category: "Promotional",
+    category: "Talking Head",
     duration: "00:27",
     platform: "TikTok, Instagram Reels",
     services: "Editing, color grading, sound design",
@@ -132,8 +132,8 @@ const PROJECTS = [
   },
   {
     id: "02",
-    title: "Talking Head Short with Motion Graphics",
-    category: "Talking Head",
+    title: "Self-Promo Reel",
+    category: "Promotional",
     duration: "01:34",
     platform: "YouTube Shorts, Instagram",
     services: "Cutting, captions, B-roll, motion raphics",
@@ -151,7 +151,7 @@ const PROJECTS = [
   {
     id: "03",
     title: "Client Instagram Reel",
-    category: "Short-form",
+    category: "Talking Head",
     duration: "00:25",
     platform: "Instagram Reels, Facebook Reels,YouTube shorts",
     services: "Editing, Music",
@@ -168,8 +168,8 @@ const PROJECTS = [
   },
   {
     id: "04",
-    title: "Educational Talking Head Short",
-    category: "Educational",
+    title: "Talking Head",
+    category: "Talking Head",
     duration: "01:12",
     platform: "YouTube Shorts",
     services: "Editing, captions, pacing, motion graphics, sound design",
@@ -187,7 +187,7 @@ const PROJECTS = [
   {
     id: "05",
     title: "Promo Ad Short",
-    category: "Promotional",
+    category: "Social Media Ads",
     duration: "00:27",
     platform: "TikTok, Instagram Reels",
     services: "Editing, color grading, sound design",
