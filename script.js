@@ -55,9 +55,20 @@
     modal.id = "videoModal";
     modal.className = "video-modal is-hidden";
     modal.setAttribute("aria-hidden", "true");
+    var contactHtml = "";
+    if(CONFIG.whatsapp){
+      var waNum = String(CONFIG.whatsapp).replace(/\D/g, "");
+      var waText = encodeURIComponent(CONFIG.whatsappMessage || "");
+      contactHtml += '<a class="video-modal__contact-btn" href="https://wa.me/' + waNum + (waText ? '?text=' + waText : '') + '" target="_blank" rel="noopener">WhatsApp</a>';
+    }
+    if(CONFIG.email){
+      contactHtml += '<a class="video-modal__contact-btn" href="mailto:' + CONFIG.email + '">Email</a>';
+    }
+
     modal.innerHTML = '<div class="video-modal__backdrop" data-close="true"></div>' +
       '<div class="video-modal__panel" role="dialog" aria-modal="true" aria-label="Project video preview">' +
       '<button type="button" class="video-modal__close" aria-label="Close video">Close</button>' +
+      (contactHtml ? '<div class="video-modal__contact">' + contactHtml + '</div>' : '') +
       '<div class="video-modal__stage"></div>' +
       '</div>';
 
