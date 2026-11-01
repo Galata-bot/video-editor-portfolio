@@ -72,8 +72,44 @@ const CATEGORIES = [
 
 const PROJECTS = [
   {
+    id: "08",
+    title: "Screen Recording Edit",
+    category: "YouTube",
+    duration: "",
+    platform: "YouTube",
+    services: "Editing",
+    featured: false,
+    client: "",
+    date: "",
+    objective: "",
+    description: "Screen recording edit.",
+    approach: "",
+    thumbnail: "assets/images/screenr.jpg",
+    videoType: "youtube",
+    videoUrl: "https://youtu.be/-E-zHzxnYYw",
+    orientation: "horizontal"
+  },
+  {
+    id: "07",
+    title: "16:9 Talking Head Edit",
+    category: "Promotional",
+    duration: "00:27",
+    platform: "TikTok, Instagram Reels",
+    services: "Editing, color grading, sound design",
+    featured: true,
+    client: "",
+    date: "",
+    objective: "",
+    description: "A self-initiated video editing project created to showcase my editing skills.",
+    approach: "Editing, captions, pacing, motion graphics, sound design",
+    thumbnail: "assets/images/horizontal-talking-head2.jpg",
+    videoType: "youtube",
+    videoUrl: "https://youtu.be/an-IUQgrDN4?si=gID2HRZNoNZkhOhD",
+    orientation: "horizontal"
+  },
+  {
     id: "01",
-    title: "Skill promo",
+    title: "Skill Promo Edit",
     category: "16:9",              // see CATEGORIES above — or use "Other"
     duration: "00:31",                   // shown as meta text (running time)
     platform: "TikTok, Instagram Reels, Youtube",
@@ -91,12 +127,12 @@ const PROJECTS = [
     thumbnail: "assets/images/1st-promo.png",                       // e.g. "assets/images/project-01.jpg"
 
     videoType: "youtube",                       // "mp4" | "youtube" | "vimeo" | ""
-    videoUrl: "https://youthttps://youtu.be/431KmJOTvU4",
+    videoUrl: "https://youtu.be/IwZXMAZGsIo",
     orientation: "horizontal"              // "vertical" (9:16) or "horizontal" (16:9)
   },
   {
     id: "02",
-    title: "video editing",
+    title: "Talking Head Short with Motion Graphics",
     category: "Talking Head",
     duration: "01:34",
     platform: "YouTube Shorts, Instagram",
@@ -114,7 +150,7 @@ const PROJECTS = [
   },
   {
     id: "03",
-    title: "client video",
+    title: "Client Instagram Reel",
     category: "Short-form",
     duration: "00:25",
     platform: "Instagram Reels, Facebook Reels,YouTube shorts",
@@ -132,7 +168,7 @@ const PROJECTS = [
   },
   {
     id: "04",
-    title: "Talking head",
+    title: "Educational Talking Head Short",
     category: "Educational",
     duration: "01:12",
     platform: "YouTube Shorts",
@@ -150,7 +186,7 @@ const PROJECTS = [
   },
   {
     id: "05",
-    title: "Ad",
+    title: "Promo Ad Short",
     category: "Promotional",
     duration: "00:27",
     platform: "TikTok, Instagram Reels",
@@ -165,41 +201,5 @@ const PROJECTS = [
     videoType: "youtube",
     videoUrl: "https://youtube.com/shorts/_1EWAsIR6F0?feature=share",
     orientation: "vertical"
-  },
- {
-    id: "06",
-    title: "16:9 talking head",
-    category: "Promotional",
-    duration: "00:27",
-    platform: "TikTok, Instagram Reels",
-    services: "Editing, color grading, sound design",
-    featured: true,
-    client: "",
-    date: "",
-    objective: "",
-    description: "A self-initiated video editing project created to showcase my editing skills.",
-    approach: "Editing, captions, pacing, motion graphics, sound design",
-    thumbnail: "assets/images/horizontal-talking-head.jpg",
-    videoType: "youtube",
-    videoUrl: "https://youtu.be/xZwMtlCX8-8?si=U_OxYeJAV1XLMeyD",
-    orientation: "horizontal"
-  },
-    {
-    id: "07",
-    title: "16:9 talking head 2",
-    category: "Promotional",
-    duration: "00:27",
-    platform: "TikTok, Instagram Reels",
-    services: "Editing, color grading, sound design",
-    featured: true,
-    client: "",
-    date: "",
-    objective: "",
-    description: "A self-initiated video editing project created to showcase my editing skills.",
-    approach: "Editing, captions, pacing, motion graphics, sound design",
-    thumbnail: "assets/images/horizontal-talking-head2.jpg",
-    videoType: "youtube",
-    videoUrl: "https://youtu.be/an-IUQgrDN4?si=gID2HRZNoNZkhOhD",
-    orientation: "horizontal"
-  },
+  }
 ];
