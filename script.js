@@ -233,7 +233,9 @@
     if(key === "all") return PROJECTS_LIST;
     var cat = CATEGORIES_LIST.find(function(c){ return c.key === key; });
     if(!cat || !cat.match) return PROJECTS_LIST;
-    return PROJECTS_LIST.filter(function(p){ return p.category === cat.match; });
+    return PROJECTS_LIST.filter(function(p){
+      return String(p.category || "").split(",").map(function(c){ return c.trim(); }).indexOf(cat.match) !== -1;
+    });
   }
 
   function renderFilterTabs(){
