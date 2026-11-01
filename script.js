@@ -319,7 +319,7 @@
       meta.className = "work-meta";
       meta.innerHTML =
         "<h3>" + escapeHtml(p.title || "Untitled project") + "</h3>" +
-        '<div class="meta-line"><span>' + escapeHtml(p.duration || "") + "</span><span>&middot;</span><span>" + escapeHtml(p.category || "") + "</span></div>";
+        '<div class="meta-line"><span>' + escapeHtml(p.duration || "") + "</span><span>&middot;</span><span>" + escapeHtml(String(p.category || "").split(",")[0].trim()) + "</span></div>";
 
       card.appendChild(frame);
       card.appendChild(meta);
@@ -444,7 +444,7 @@
       return;
     }
 
-    document.getElementById("detailCategory").innerHTML = '<span class="rule"></span>' + escapeHtml(p.category || "");
+    document.getElementById("detailCategory").innerHTML = '<span class="rule"></span>' + escapeHtml(String(p.category || "").split(",")[0].trim());
     document.getElementById("detailTitle").textContent = p.title || "Untitled project";
 
     var metaBits = [];
