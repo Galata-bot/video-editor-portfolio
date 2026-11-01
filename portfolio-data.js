@@ -62,6 +62,7 @@
 const CATEGORIES = [
   { key: "all",          label: "All",          match: null },
   { key: "short-form",   label: "Short-Form",    match: "Short-Form" },
+  { key: "horizontal",   label: "Horizontal",    match: "Horizontal" },
   { key: "talking-head", label: "Talking Head",  match: "Talking Head" },
   { key: "ads",          label: "Ads",           match: "Social Media Ads" },
   { key: "educational",  label: "Educational",   match: "Educational" },
@@ -74,7 +75,7 @@ const PROJECTS = [
   {
     id: "08",
     title: "Screen Recording Edit",
-    category: "Talking Head, Promotional",
+    category: "Talking Head, Promotional, Horizontal",
     duration: "",
     platform: "YouTube",
     services: "Editing",
@@ -92,7 +93,7 @@ const PROJECTS = [
   {
     id: "07",
     title: "16:9 Talking Head Edit",
-    category: "Talking Head",
+    category: "Talking Head, Horizontal",
     duration: "00:27",
     platform: "TikTok, Instagram Reels",
     services: "Editing, color grading, sound design",
@@ -110,7 +111,7 @@ const PROJECTS = [
   {
     id: "01",
     title: "Skill Promo Edit",
-    category: "16:9",              // see CATEGORIES above — or use "Other"
+    category: "Horizontal",              // see CATEGORIES above — or use "Other"
     duration: "00:31",                   // shown as meta text (running time)
     platform: "TikTok, Instagram Reels, Youtube",
     services: "Editing, pacing, captions, sound design",
@@ -133,7 +134,7 @@ const PROJECTS = [
   {
     id: "02",
     title: "Self-Promo Reel",
-    category: "Promotional",
+    category: "Promotional, Short-Form",
     duration: "01:34",
     platform: "YouTube Shorts, Instagram",
     services: "Cutting, captions, B-roll, motion raphics",
@@ -151,7 +152,7 @@ const PROJECTS = [
   {
     id: "03",
     title: "Client Instagram Reel",
-    category: "Talking Head",
+    category: "Talking Head, Short-Form",
     duration: "00:25",
     platform: "Instagram Reels, Facebook Reels,YouTube shorts",
     services: "Editing, Music",
@@ -169,7 +170,7 @@ const PROJECTS = [
   {
     id: "04",
     title: "Talking Head",
-    category: "Talking Head",
+    category: "Talking Head, Short-Form",
     duration: "01:12",
     platform: "YouTube Shorts",
     services: "Editing, captions, pacing, motion graphics, sound design",
@@ -187,7 +188,7 @@ const PROJECTS = [
   {
     id: "05",
     title: "Promo Ad Short",
-    category: "Social Media Ads",
+    category: "Social Media Ads, Short-Form",
     duration: "00:27",
     platform: "TikTok, Instagram Reels",
     services: "Editing, color grading, sound design",
